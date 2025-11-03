@@ -29,7 +29,7 @@ app.get('/lessons', (req, res) => {
 });
 
 app.get('/lessons/:id', (req, res) => {
-    //get requested id!
+    //get requested id! and turn it into number!
     const id = parseInt(req.params.id);
 
     const foundLesson = lessons.find(lesson => lesson.id === id);
@@ -43,7 +43,6 @@ app.get('/lessons/:id', (req, res) => {
 });
 
 
-
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
-})
+});
