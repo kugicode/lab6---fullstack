@@ -9,7 +9,8 @@ const lessons = [
     {id:2, name: 'Intro to javasccript'},
     {id:3, name: 'Intro to css'},
     {id:4, name: 'Intro to vuejs'},
-    {id:5, name: 'Intro to react'}
+    {id:5, name: 'Intro to react'},
+    {id:6 , name: "Intro to Java"}
 ]
 
 const myLogger = (req, res, next) => {
@@ -28,6 +29,10 @@ app.get('/lessons', (req, res) => {
     res.json(lessons);
 });
 
+app.get('/new', (req, res) => {
+    res.send("Another new page.");
+})
+
 app.get('/lessons/:id', (req, res) => {
     //get requested id! and turn it into number!
     const id = parseInt(req.params.id);
@@ -44,5 +49,6 @@ app.get('/lessons/:id', (req, res) => {
 
 
 app.listen(PORT, () => {
-    console.log(`http://localhost:${PORT}`);
+    console.log(`Server is listening at http://localhost:${PORT}`);
+    console.log();
 });
